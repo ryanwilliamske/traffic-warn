@@ -7,6 +7,7 @@ Devices used:
 */
 
 #include <LiquidCrystal.h>
+//Library brought error message. Uncomment the library before running.
 int LED = 13;
 //Red Light connected to digital pin 13
 
@@ -34,9 +35,9 @@ void loop(){
   int temp = analogRead(TEMP_PIN);
   float eV = temp * 4.9;
   float tempInC = (eV - 500)/10;
-  //sensorReading = analogRead(knockSensor);
+  sensorReading = analogRead(knockSensor);
   //This is an extreme test
-  sensorReading = 300;
+  //sensorReading = 300;
   
   if (tempInC > 80 || sensorReading >= threshold){
  /*
