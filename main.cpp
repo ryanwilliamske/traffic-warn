@@ -35,15 +35,13 @@ void loop(){
   int temp = analogRead(TEMP_PIN);
   float eV = temp * 4.9;
   float tempInC = (eV - 500)/10;
+// Above code converts temp reading to Celcius
   sensorReading = analogRead(knockSensor);
-  //This is an extreme test
-  //sensorReading = 300;
   
-  if (tempInC > 80 || sensorReading >= threshold){
+  if (tempInC > 220 || sensorReading >= threshold){
  /*
- If the temperature is above 120 degrees C, or the impact is above 100N
+ If the temperature is above 220 degrees C, or the impact is above 100N
  System flags that the car has been involved in an accident.
- 
  */
     
   	digitalWrite(LED, HIGH);
